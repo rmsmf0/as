@@ -16,25 +16,29 @@ const func1=async ()=>
   }
 }
 
-//  const func2 = async (postId, newTitle) => {
-//     try {
-//       await fetch(`http://localhost:3000/now/${postId}`, {
-//         method: 'PATCH',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({ title: newTitle }),
-//       });
-//       func1();
-//     } catch (error) {
-//       console.error('Error updating post:', error);
-//     }
-//   };
+ const func2 = async (postId, newTitle) => {
+    try {
+      await fetch(`http://localhost:3000/now/${postId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ title: newTitle }),
+      });
+      func1();
+    } catch (error) {
+      console.error('Error updating post:', error);
+    }
+  };
 
   return (
     <div >
-      Hello world
-      <button onClick={func1}>a</button>
+      Hello worlddddddddd
+      <button onClick={
+        ()=>{
+          func2(1,3)
+        }
+      }>a</button>
       {JSON.stringify(data)}
     </div>
   );
